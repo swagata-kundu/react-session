@@ -46,6 +46,6 @@ module.exports = {
     hot: true,
     historyApiFallback: true,
     inline: true,
-    port: 3000
+    port: 8080
   }
 };

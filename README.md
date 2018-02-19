@@ -1,4 +1,4 @@
-# React-Session demo setuo
+# React-Session demo setup
 
 ### This setup is only for development purpose
 ## Features
