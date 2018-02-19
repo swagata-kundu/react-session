@@ -1,12 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import {render} from "react-dom";
 
-const title = 'Welcome to React session';
+import App from "./App";
+import * as style from "./index.css";
 
-ReactDOM.render(<div > {
-  title
-} </div>,
-  document.getElementById('app')
-);
+const title = "Welcome to React session";
 
-module.hot.accept();
+window.onload = () => {
+  document.body.innerHTML = '<div id="root"/>';
+  render(<App />, document.getElementById("root"));
+  module.hot.accept();
+};
