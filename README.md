@@ -6,6 +6,7 @@
 * React 16
 * Webpack 3
 * Babel
+* React Router V4
 * Hot Module Replacement
 
 ## Installation
