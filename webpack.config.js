@@ -1,12 +1,13 @@
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin')
+const path = require('path')
 
 module.exports = {
   entry: ["babel-polyfill", "react-hot-loader/patch", "./src/index.jsx"],
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         use: ["babel-loader"]
@@ -24,7 +25,7 @@ module.exports = {
     extensions: [".js", ".jsx"]
   },
   output: {
-    path: __dirname + "/dist",
+    path: path.join(__dirname + "/dist"),
     publicPath: "/",
     filename: "bundle.js"
   },
@@ -39,7 +40,10 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "React Session",
       inject: true
-    })
+    }), new CopyWebpackPlugin([{
+      from: 'assets',
+      to: 'assets'
+    }, ])
   ],
   devServer: {
     contentBase: "./dist",
