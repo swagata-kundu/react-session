@@ -39,6 +39,8 @@ class New extends Component {
       <div>
         <Conter list={this.state.list} />
 
+        <img src="assets/15.png" />
+
         <button onClick={this.increaseCounter}> Try me out</button>
       </div>
     );
